@@ -1,0 +1,8 @@
+{
+  "name": "Apresentação Presencial",
+  "description": "Apresentação moderna para stakeholders baseada no manual de marca do projeto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

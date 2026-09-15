@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-coral: #EC3237;
+  --color-brand-white: #FCF7F8;
+  --color-brand-black: #000000;
+  --color-brand-graphite: #232323;
+  --color-brand-dark: #6B2520;
+  --color-brand-accent: #C95D2A;
+
+  --font-heading: "Source Serif 4", serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-graphite);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 1.0;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+}
