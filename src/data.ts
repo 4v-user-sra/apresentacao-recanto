@@ -1,3 +1,12 @@
+export const crmProjectionData = [
+  { step: "100 Leads", custo: 35, receita: 1347 },
+  { step: "200 Leads", custo: 70, receita: 2694 },
+  { step: "300 Leads", custo: 105, receita: 4041 },
+  { step: "400 Leads", custo: 140, receita: 5388 },
+  { step: "500 Leads", custo: 175, receita: 6723 },
+  { step: "Base Total (1.224)", custo: 428, receita: 16443 }
+];
+
 export const socialMetrics = [
   { label: "Visualizações", value: "129.901", trend: "↑ 47,6%", positive: true },
   { label: "Alcance", value: "12.475", trend: "↑ 65,2%", positive: true },

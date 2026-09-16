@@ -1,6 +1,7 @@
-import { crmMetrics, saloonOffers, deliveryOffers } from '../data';
+import { crmMetrics, saloonOffers, deliveryOffers, crmProjectionData } from '../data';
 import { FadeIn } from './FadeIn';
 import { Users, Store, Smartphone, MessageCircle } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export function CRM() {
   return (
@@ -80,19 +81,47 @@ export function CRM() {
           </FadeIn>
         </div>
 
-        {/* Operational Flow */}
+        {/* Projeção de Retorno */}
         <FadeIn delay={0.4}>
-          <div className="bg-brand-coral p-8 md:p-10 rounded-[12px] flex flex-col md:flex-row items-center gap-8">
-            <div className="w-16 h-16 shrink-0 bg-brand-white/20 rounded-full flex items-center justify-center">
-              <MessageCircle className="w-8 h-8 text-brand-white" />
-            </div>
-            <div>
-              <h4 className="text-brand-white font-bold text-xl mb-2">Metrificação & Operação</h4>
-              <p className="text-brand-white/90 font-medium leading-relaxed">
-                Extração de telefones com celular válidos da base de <strong>leads potenciais</strong>. 
-                Disparo via API WhatsApp configurada internamente. 
-                O resgate das ofertas será monitorado através dos cupons digitais ativos no link do cardápio e pelo feedback/validação direta da equipe de salão.
-              </p>
+          <div className="bg-brand-white/5 border border-brand-white/10 p-8 md:p-10 rounded-[12px]">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
+              <div className="lg:w-1/3 space-y-6 w-full">
+                <h4 className="text-brand-white font-bold text-3xl font-heading mb-4">Projeção de Retorno</h4>
+                <p className="text-brand-white/80 font-medium leading-relaxed">
+                  Considerando a média de mercado para conversão de base quente (16,63%) e o ticket médio atual de R$ 81,00, esta é a projeção escalonada do disparo inicial de 500 leads via API do WhatsApp.
+                </p>
+                <div className="bg-brand-white/10 p-5 rounded-lg border border-brand-white/10 mt-6">
+                  <div className="text-brand-white/60 text-xs font-bold uppercase mb-1">Custo Total (500 Envios)</div>
+                  <div className="text-brand-coral font-bold text-3xl">R$ 175,00</div>
+                  <div className="text-brand-white/50 text-xs mt-1 font-medium">500 leads × R$ 0,35</div>
+                </div>
+                <div className="bg-brand-white/10 p-5 rounded-lg border border-brand-white/10">
+                  <div className="text-brand-white/60 text-xs font-bold uppercase mb-1">Receita Estimada (500 Envios)</div>
+                  <div className="text-green-400 font-bold text-3xl">R$ 6.723,00</div>
+                  <div className="text-brand-white/50 text-xs mt-1 font-medium">~83 conversões × R$ 81,00</div>
+                </div>
+              </div>
+              
+              <div className="lg:w-2/3 w-full h-[350px] bg-brand-white rounded-[12px] p-6 shadow-xl">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={crmProjectionData}
+                    margin={{ top: 20, right: 20, left: 0, bottom: 20 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false} />
+                    <XAxis dataKey="step" axisLine={false} tickLine={false} tick={{fill: '#6B2520', fontWeight: 'bold'}} dy={15} />
+                    <YAxis yAxisId="left" axisLine={false} tickLine={false} tick={{fill: '#232323'}} tickFormatter={(value) => `R$ ${value}`} />
+                    <Tooltip 
+                      contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                      itemStyle={{ fontWeight: 'bold' }}
+                      formatter={(value: any, name: string) => [`R$ ${value}`, name]}
+                    />
+                    <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px' }} />
+                    <Line yAxisId="left" type="monotone" dataKey="receita" name="Receita Estimada" stroke="#22C55E" strokeWidth={4} dot={{r: 6, strokeWidth: 2}} activeDot={{r: 8}} />
+                    <Line yAxisId="left" type="monotone" dataKey="custo" name="Custo de Envio" stroke="#EC3237" strokeWidth={4} dot={{r: 6, strokeWidth: 2}} activeDot={{r: 8}} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         </FadeIn>

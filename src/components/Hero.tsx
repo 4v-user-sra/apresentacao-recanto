@@ -21,6 +21,14 @@ export function Hero() {
             >
               Recanto da Pizza
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-brand-white/90 text-xl md:text-2xl max-w-2xl leading-relaxed italic font-serif"
+            >
+              Performance dos últimos 60 dias, Reativação de Base de leads, Google Meu Negócio, Desempenho do Social Media
+            </motion.p>
           </div>
 
           {/* Hero Image */}

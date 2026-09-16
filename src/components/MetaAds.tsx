@@ -12,9 +12,12 @@ export function MetaAds() {
             <span className="text-brand-coral font-bold tracking-widest uppercase text-sm">Auditoria Meta Ads</span>
           </div>
           <h2 className="text-brand-graphite mb-6 text-4xl md:text-[54px] leading-tight">Performance e Estratégia</h2>
-          <p className="text-xl text-brand-graphite/80 max-w-3xl font-medium leading-relaxed mb-16">
+          <p className="text-xl text-brand-graphite/80 max-w-3xl font-medium leading-relaxed mb-6">
             Análise do histórico recente de anúncios focados em vendas. A leitura estratégica aponta para uma concentração de resultados em ofertas claras de aquisição.
           </p>
+          <div className="inline-flex items-center gap-2 bg-brand-coral/10 text-brand-coral font-bold px-4 py-2 rounded-lg mb-16 text-sm uppercase tracking-wider">
+            Período analisado: 17 de julho de 2026 até 14 de agosto de 2026
+          </div>
         </FadeIn>
 
         {/* Top Metrics */}
