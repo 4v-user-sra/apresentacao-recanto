@@ -94,30 +94,34 @@ export const metaMetrics = [
   { label: "Investimento", value: "R$ 2.368", subtitle: "Período analisado" },
   { label: "Impressões", value: "445.153", subtitle: "Alcance de 45.299 (Freq: 9,83)" },
   { label: "Cliques no Link", value: "5.952", subtitle: "CTR Agregado de 1,84%" },
-  { label: "Compras Reportadas", value: "700+", subtitle: "Campanhas de conversão" }
+  { label: "Compras Reportadas", value: "700+", subtitle: "Campanhas de conversão" },
+  { label: "Faturamento Realizado", value: "R$ 62.594,50", subtitle: "Das compras reportadas" }
 ];
 
 export const metaCreatives = [
   {
-    title: "Oferta de Aquisição (1ª Compra)",
-    copy: '"Primeira vez no Recanto da Pizza? No seu 1º pedido, use o cupom BEMVINDO10 e ganhe 10% OFF..."',
-    metric: "280 compras",
-    ctr: "1,27% CTR",
-    analysis: "Oferta como âncora: prova de contexto (primeira vez) + cupom explícito + CTA direto."
+    title: "AD 02",
+    image: "https://i.imgur.com/HM4WdAY.png",
+    purchases: "478 compras",
+    revenue: "R$ 41.286,00",
+    roas: "27,95",
+    ctr: "6,13%"
   },
   {
-    title: "Ação Direta (Cardápio)",
-    copy: '"Bateu aquela vontade de pizza? Escolha seu sabor favorito, confira as opções e faça seu pedido!"',
-    metric: "Maior Engajamento",
-    ctr: "2,22% CTR",
-    analysis: "Copy direta orientada à ação rápida. Excelente taxa de clique e porta de entrada."
+    title: "AD 01",
+    image: "https://i.imgur.com/F2J4RzX.png",
+    purchases: "109 compras",
+    revenue: "R$ 9.881,50",
+    roas: "51,70",
+    ctr: null
   },
   {
-    title: "Apelo Sensorial (Desejo)",
-    copy: '"Tem cheirinho de pizza saindo do forno por aqui… Massa leve, muito recheio… Faça seu pedido!"',
-    metric: "120 compras",
-    ctr: "0,93% CTR",
-    analysis: "Foco no desejo visual e sensorial. Complementa muito bem a estratégia de cupons."
+    title: "ADS Bem-vindo",
+    image: "https://i.imgur.com/5K1lpIa.png",
+    purchases: "35 compras",
+    revenue: "R$ 3.288,00",
+    roas: "41,00",
+    ctr: null
   }
 ];
 
