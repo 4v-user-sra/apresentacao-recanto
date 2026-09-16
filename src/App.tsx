@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { StrictMode } from 'react';
 import { Hero } from './components/Hero';
 import { MetaAds } from './components/MetaAds';
 import { CRM } from './components/CRM';
@@ -11,6 +12,7 @@ import { Keywords } from './components/Keywords';
 import { GMN } from './components/GMN';
 import { Projections } from './components/Projections';
 import { NextSteps } from './components/NextSteps';
+import { SocialMedia } from './components/SocialMedia';
 
 export default function App() {
   return (
@@ -23,6 +25,7 @@ export default function App() {
       <Projections />
       <GMN />
       <NextSteps />
+      <SocialMedia />
     </div>
   );
 }

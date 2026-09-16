@@ -1,3 +1,86 @@
+export const socialMetrics = [
+  { label: "Visualizações", value: "129.901", trend: "↑ 47,6%", positive: true },
+  { label: "Alcance", value: "12.475", trend: "↑ 65,2%", positive: true },
+  { label: "Interações", value: "3.500", trend: "↑ 120,3%", positive: true },
+  { label: "Visitas ao Perfil", value: "6.100", trend: "↓ 13,7%", positive: false },
+  { label: "Novos Seguidores", value: "544", trend: "↓ 12,7%", positive: false },
+  { label: "Cliques no Link", value: "126", trend: "—", positive: true }
+];
+
+export const socialTopPosts = [
+  {
+    rank: "1º",
+    title: "21 anos de Recanto",
+    type: "Imagem",
+    date: "11/08",
+    image: "https://i.imgur.com/iCErjI1.jpeg",
+    views: "13.074",
+    reach: "6.474",
+    engagement: "11,2%",
+    likes: 532,
+    comments: 97,
+    shares: 91,
+    saves: 5
+  },
+  {
+    rank: "2º",
+    title: "Tem um Silva no grupo?",
+    type: "Imagem",
+    date: "07/09",
+    image: "https://i.imgur.com/q86zH8A.jpeg",
+    views: "10.381",
+    reach: "3.370",
+    engagement: "7,51%",
+    likes: 77,
+    comments: 20,
+    shares: 151,
+    saves: 5
+  },
+  {
+    rank: "3º",
+    title: "Desafio Verde",
+    type: "Imagem",
+    date: "03/08",
+    image: "https://i.imgur.com/FH65L6a.jpeg",
+    views: "9.561",
+    reach: "4.090",
+    engagement: "7,7%",
+    likes: 107,
+    comments: 10,
+    shares: 192,
+    saves: 6
+  }
+];
+
+export const socialInsights = {
+  works: [
+    {
+      title: "Identidade e Humanização",
+      description: "O post de 21 anos bateu 11,2% de engajamento (muito acima da média >6%). A audiência responde muito bem quando a marca fala da própria história e das pessoas."
+    },
+    {
+      title: "Mecânicas Promocionais Nominais",
+      description: "Desafio Verde (192 compartilhamentos) e Silva (151 compartilhamentos). Campanhas com nomes próprios furam a bolha de seguidores e trazem alcance viral."
+    }
+  ],
+  attention: [
+    {
+      title: "Retenção nos Reels",
+      description: "Os 5 Reels ficaram abaixo do potencial (1k-2k views). O hook dos 3 primeiros segundos precisa ser mais agressivo para segurar o scroll."
+    },
+    {
+      title: "Conversão de Tráfego",
+      description: "Alto volume de visualização, mas apenas 126 cliques no link. O engajamento é passivo. Precisamos de CTAs mais diretos enviando o usuário para a Bio/Anota Aí."
+    }
+  ],
+  nextCycle: [
+    "Manter 2 posts mensais de humanização (bastidores, equipe).",
+    "Manter campanhas nominais ativas (Desafio Silva) e pensar em renovação.",
+    "Testar novos hooks de 3 segundos nos Reels (dúvida, curiosidade).",
+    "Reforçar chamadas para o link da Bio nos posts de maior tração."
+  ]
+};
+
 export const metaMetrics = [
   { label: "Investimento", value: "R$ 2.368", subtitle: "Período analisado" },
   { label: "Impressões", value: "445.153", subtitle: "Alcance de 45.299 (Freq: 9,83)" },
