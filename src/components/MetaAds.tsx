@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { metaMetrics, metaCreatives, metaStrategy } from '../data';
 import { FadeIn } from './FadeIn';
-import { BarChart3, Megaphone, Lightbulb, MousePointerClick } from 'lucide-react';
+import { BarChart3, Megaphone, Lightbulb, MousePointerClick, X, ZoomIn } from 'lucide-react';
 
 export function MetaAds() {
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
   return (
     <section className="py-32 px-8 bg-brand-white border-b border-brand-graphite/5">
       <div className="max-w-6xl mx-auto">
@@ -43,14 +46,20 @@ export function MetaAds() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {metaCreatives.map((creative, idx) => (
               <FadeIn key={idx} delay={0.3 + (idx * 0.1)} className="bg-brand-white rounded-[12px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-brand-graphite/5 flex flex-col group">
-                <div className="relative h-64 overflow-hidden bg-brand-graphite/5">
+                <div 
+                  className="relative h-64 overflow-hidden bg-brand-graphite/5 cursor-pointer group/img"
+                  onClick={() => setExpandedImage(creative.image)}
+                >
+                  <div className="absolute inset-0 bg-brand-graphite/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center">
+                    <ZoomIn className="text-white w-10 h-10 drop-shadow-md" />
+                  </div>
                   <img 
                     src={creative.image} 
                     alt={creative.title} 
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500" 
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4 bg-brand-coral text-brand-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full z-10 shadow-md">
+                  <div className="absolute top-4 left-4 bg-brand-coral text-brand-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full z-30 shadow-md">
                     {creative.title}
                   </div>
                 </div>
@@ -111,6 +120,27 @@ export function MetaAds() {
         </div>
 
       </div>
+
+      {expandedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-pointer"
+          onClick={() => setExpandedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-brand-coral transition-colors"
+            onClick={() => setExpandedImage(null)}
+          >
+            <X className="w-10 h-10" />
+          </button>
+          <img 
+            src={expandedImage} 
+            alt="Criativo Expandido" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default"
+            onClick={(e) => e.stopPropagation()} 
+            referrerPolicy="no-referrer"
+          />
+        </div>
+      )}
     </section>
   );
 }
